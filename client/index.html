@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hieu Joyce</h1>
+  </body>
+</html>
+
+<script>
+  let token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MDQ4NDk4LCJpYXQiOjE2NzcwMzY0OTgsImp0aSI6ImI4MDQ2ODk3MmJlODQ5ZmZiZDM1MWVmZDI1MTM1ZDRlIiwidXNlcl9pZCI6MX0.DhLQl66SEfZecKmXmaLVeK0lVqDhyA4zU3sSCu1uJII";
+  fetch("http://127.0.0.1:8000/jwt-demo/", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+</script>

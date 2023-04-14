@@ -1,13 +1,8 @@
 from django.shortcuts import render
 from .models import Userct
 from django.http import HttpResponse
-from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_deny
+#from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_deny
 
-# Create your views here.
-
-
-# for u in user:
-#     print(u.username)
 #@xframe_options_deny
 def sqlViewNotSecurity(request):
     if request.method == "POST":
@@ -33,12 +28,3 @@ def sqlViewSecurity(request):
             return HttpResponse("Tai khoan hoac mat khau khong chinh xac")
     else: 
         return render(request, 'sql_security.html')
-
-
-# SQL injection là gì?
-# Nói một cách ngắn gọn, đó là một cuộc tấn công vào ứng dụng của bạn,
-# trong đó kẻ tấn công cố gắng thực thi các lệnh bổ sung trên cơ sở dữ
-# liệu của bạn. Nó được gọi là SQL injection vì kẻ tấn công đưa vào các
-# lệnh SQL thông qua đầu vào của người dùng, do đó thay đổi cách ứng 
-# dụng của bạn hoạt động. Điều này có thể dẫn đến rò rỉ thông tin, truy
-# cập trái phép hoặc thậm chí xóa sạch tất cả dữ liệu của bạn. 

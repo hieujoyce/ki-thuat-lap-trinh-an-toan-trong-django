@@ -16,7 +16,7 @@
   </head>
   <body>
     <form action="/xss-demo/not-security" method="post">
-      <!-- <label for="xss" class={{ var }}>Nhap Class: </label> -->
+      {% csrf_token %}
       <label for="className">Nhap Class: </label>
       <input type="text" name="className" />
       <button type="submit">Submit</button>
@@ -28,9 +28,7 @@
         margin-top: 20px;
         border: 2px solid black;
       "
-      class="{{"
-      className
-      }}
+      class={{ className }}
     ></div>
   </body>
 </html>
